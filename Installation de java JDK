@@ -1,0 +1,44 @@
+            - nom : Installation de Java JDK
+  utilise : actions/setup-java@v5.2.0
+  avec:
+    # Version Java à configurer. Accepte une version Java complète ou semver. Consultez les exemples de syntaxe prise en charge dans le fichier README.
+    java-version : # optionnel
+    # Chemin d'accès au fichier `.java-version`. Consultez les exemples de syntaxe prise en charge dans le fichier README.
+    fichier de version Java : # optionnel
+    # Distribution Java. Consultez la liste des distributions prises en charge dans le fichier README.
+    distribution:
+    # Le type de package (jdk, jre, jdk+fx, jre+fx)
+    java-package : # facultatif, par défaut jdk
+    # L'architecture du package (par défaut, l'architecture de l'exécuteur d'actions)
+    architecture : # optionnel
+    # Chemin d'accès à l'emplacement du JDK compressé
+    jdkFile : # optionnel
+    # Activez cette option si vous souhaitez que l'action vérifie la disponibilité de la dernière version conforme aux spécifications de version.
+    vérifier-dernières : # optionnel
+    # ID du dépôt distributionManagement dans le fichier pom.xml. Par défaut : `github`
+    server-id : # facultatif, par défaut github
+    # Nom de la variable d'environnement pour le nom d'utilisateur permettant l'authentification auprès du dépôt Apache Maven. La valeur par défaut est $GITHUB_ACTOR
+    nom d'utilisateur du serveur : # facultatif, par défaut GITHUB_ACTOR
+    # Nom de la variable d'environnement pour le mot de passe ou le jeton d'authentification auprès du dépôt Apache Maven. Par défaut : $GITHUB_TOKEN
+    mot de passe du serveur : # facultatif, par défaut GITHUB_TOKEN
+    # Chemin d'accès où le fichier settings.xml sera écrit. Par défaut : ~/.m2.
+    chemin des paramètres : # optionnel
+    # Remplacer le fichier settings.xml s'il existe. La valeur par défaut est « true ».
+    overwrite-settings : # facultatif, la valeur par défaut est vrai
+    # Clé privée GPG à importer. Par défaut : chaîne vide.
+    gpg-private-key : # optionnel
+    # Nom de la variable d'environnement pour la phrase secrète de la clé privée GPG. La valeur par défaut est $GPG_PASSPHRASE.
+    phrase de passe GPG : # optionnel
+    # Nom de la plateforme de construction pour mettre en cache les dépendances. Il peut s'agir de « maven », « gradle » ou « sbt ».
+    cache : # optionnel
+    # Chemin d'accès à un fichier de dépendance : pom.xml, build.gradle, build.sbt, etc. Cette option peut être utilisée avec l'option `cache`. Si elle est omise, la recherche du fichier de dépendance s'effectue dans l'ensemble du dépôt. Cette option prend en charge les caractères génériques et une liste de noms de fichiers pour la mise en cache de plusieurs dépendances.
+    cache-dependency-path : # optionnel
+    # Solution de contournement pour transmettre l'état de la tâche à l'étape de post-tâche. Cette variable n'est pas destinée à être paramétrée manuellement.
+    job-status : # facultatif, la valeur par défaut est ${{ job.status }}
+    # Jeton utilisé pour l'authentification lors de la récupération des manifestes de version hébergés sur github.com, comme par exemple pour la version Microsoft d'OpenJDK. Sur github.com, la valeur par défaut est suffisante. Sur GHES, vous pouvez fournir un jeton d'accès personnel pour github.com en cas de limitation de débit.
+    token: # facultatif, la valeur par défaut est ${{ github.server_url == 'https://github.com' && github.token || '' }}
+    # Nom de l'identifiant de la chaîne d'outils Maven si le nom par défaut « ${distribution}_${java-version} » n'est pas souhaité. Consultez les exemples de syntaxe prise en charge dans le fichier d'utilisation avancée.
+    mvn-toolchain-id : # optionnel
+    # Nom du fournisseur de la chaîne d'outils Maven si le nom par défaut « ${distribution} » n'est pas souhaité. Consultez les exemples de syntaxe prise en charge dans le fichier d'utilisation avancée.
+    mvn-toolchain-vendor : # optionnel
+          
